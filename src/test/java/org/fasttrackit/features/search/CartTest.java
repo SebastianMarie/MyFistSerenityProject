@@ -9,26 +9,19 @@ import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
 @RunWith(SerenityRunner.class)
-public class LoginTest {
 
+public class CartTest {
     @Managed(uniqueSession = false)
-    private WebDriver webdriver;
-
+    private WebDriver webDriver;
 
     @Steps
     private LoginSteps loginSteps;
 
     @Test
-    public void validCredentialsLoginTest(){
+    public void addProductToCartTest(){
+        loginSteps.login("sebastian.rgs@hotmail.com","IronMaiden1");
+        Object cartSteps = null;
 
-        loginSteps.navigateToLogin();
-        loginSteps.setEmail("sebastian.rgs@hotmail.com");
-        loginSteps.setPassword("IronMaiden1");
-        loginSteps.clickLoginButton();
-        loginSteps.verifyAccountMessage("Sebastian Marie");
-
-    loginSteps.login("sebastian.rgs@hotmail.com","IronMaiden1");
 
     }
-
 }
