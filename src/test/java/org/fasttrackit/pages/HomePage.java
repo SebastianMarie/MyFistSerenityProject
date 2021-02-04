@@ -11,11 +11,15 @@ public class HomePage extends PageObject {
     private WebElementFacade accountLink;
     @FindBy(css = "a[title*='Log']")
     private WebElementFacade loginLink;
+    @FindBy(css = "#search")
+    private WebElementFacade searchField;
+    @FindBy(css = ".search-button")
+    private WebElementFacade searchIcon;
 
-    public void clickAccountLink(){
-    clickOn(accountLink);
-    }
-    public void clickLoginLink(){
-        clickOn(loginLink);
-    }
+    public void clickAccountLink(){ clickOn(accountLink); }
+    public void clickLoginLink(){ clickOn(loginLink); }
+    public void setSearchField(String text){typeInto(searchField,text);}
+    public void clickSearchIcon(){clickOn(searchIcon);}
+
+
 }

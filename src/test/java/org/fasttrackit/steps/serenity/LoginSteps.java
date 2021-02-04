@@ -1,12 +1,14 @@
 package org.fasttrackit.steps.serenity;
 
 import net.thucydides.core.annotations.Step;
+import org.fasttrackit.pages.AccountPage;
 import org.fasttrackit.pages.HomePage;
 import org.fasttrackit.pages.LoginPage;
 
 public class LoginSteps{
     private HomePage homePage;
     private LoginPage loginPage;
+    private AccountPage accountPage;
 
     @Step
     public void navigateToLogin(){
@@ -16,7 +18,8 @@ public class LoginSteps{
     }
     @Step
     public void setEmail(String email){
-    loginPage.setEmailField(email);
+
+        loginPage.setEmailField(email);
     }
     @Step
     public void setPassword(String password){
@@ -31,5 +34,10 @@ public class LoginSteps{
     setEmail(username);
     setPassword(password);
     clickLoginButton();
+    }
+    @Step
+    public void verifyAccountMessage(String username){
+        accountPage.verifyHelloMessage(username);
+
     }
 }
