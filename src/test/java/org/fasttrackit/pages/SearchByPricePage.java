@@ -9,7 +9,7 @@ import java.util.List;
 
 public class SearchByPricePage extends PageObject {
 
-    @FindBy(css = ".category-products .item.last")
+    @FindBy(css = ".category-products")
     private List<WebElementFacade> productList;
     @FindBy(css = "[class='price-box']")
     private List<WebElementFacade> priceList;

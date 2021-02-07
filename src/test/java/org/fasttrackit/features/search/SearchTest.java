@@ -10,9 +10,11 @@ import org.junit.Test;
 public class SearchTest extends BaseTest {
 
     @Steps
-    private SearchSteps searchSteps;
-    @Steps
     private LoginSteps loginSteps;
+
+    @Steps
+    private SearchSteps searchSteps;
+
 
     @Test
     public void searchProductTest(){
