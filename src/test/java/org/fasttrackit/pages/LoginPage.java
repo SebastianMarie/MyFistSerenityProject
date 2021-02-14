@@ -5,16 +5,17 @@ import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.serenitybdd.core.pages.WebElementFacade;
+import org.openqa.selenium.WebElement;
 
-@DefaultUrl("http://testfasttrackit.info/selenium-test/customer/account/login/")
+@DefaultUrl("http://qa3.fasttrackit.org:8008/my-account")
 public class LoginPage extends PageObject {
-    @FindBy(id = "email")
+    @FindBy(id = "username")
     private WebElementFacade emailField;
 
-    @FindBy(id = "pass")
+    @FindBy(id = "password")
     private WebElementFacade passwordField;
 
-    @FindBy(id = "send2")
+    @FindBy(css = "[value='Login']")
     private WebElementFacade loginButton;
 
     public void setEmailField(String username){
@@ -30,4 +31,6 @@ public class LoginPage extends PageObject {
 
         clickOn(loginButton);
     }
+
+
 }

@@ -6,26 +6,28 @@ import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
 import org.openqa.selenium.WebElement;
 
-@DefaultUrl("http://testfasttrackit.info/selenium-test/checkout/cart/")
+@DefaultUrl("http://qa3.fasttrackit.org:8008/shop")
+
 public class CartPage extends PageObject {
 
-    @FindBy(css = "#search")
-    private WebElementFacade typeInProductInSearchField;
-    @FindBy(css = "#search_mini_form > div.input-box > button")
-    private WebElementFacade clickOnSearchProduct;
-    @FindBy
-    private WebElementFacade clickOnProduct;
-    @FindBy(css = "label[for='links_20']")
-    private WebElementFacade clickOnCheckItemToDownload;
-    @FindBy(css = "#product_addtocart_form > div.product-shop > div.product-options-bottom > div.add-to-cart > div.add-to-cart-buttons > button > span > span")
-    private WebElementFacade clickOnAddToCartButton;
+    @FindBy(css = " #menu-item-1728 a")
+    private WebElementFacade clickOnShopPage;
+    @FindBy(css="/shop?add-to-cart=2880")
+    private WebElementFacade clickAddToCartProduct;
 
+    public void setClickOnShopPage(Object webElementFacade, WebElementFacade clickOnShopPage) {
+    }
 
-
-
-
-
-
+    @DefaultUrl("http://qa3.fasttrackit.org:8008/cart")
+  public class ViewCartPage extends PageObject{
+        @FindBy(css = "fa fa-shopping-cart")
+        private WebElementFacade clickViewShoppingCart;
+        
+        public void setClickOnShopPage(WebElement shopPage){
+            clickOn(shopPage);
+            
+        }
+    }
 
 
 

@@ -7,36 +7,32 @@ import org.fasttrackit.pages.CartPage;
 import org.fasttrackit.pages.HomePage;
 import org.fasttrackit.pages.LoginPage;
 
-public class CartSteps {
+public class CartSteps<ShopPage> {
     private HomePage homePage;
     private LoginPage loginPage;
     private AccountPage accountPage;
+    private ShopPage shopPage;
     private CartPage cartPage;
-    private WebElementFacade typeInProductInSearchField;
-    private WebElementFacade clickOnSearchProduct;
-    private WebElementFacade clickOnProduct;
-    private WebElementFacade clickOnCheckItemToDownload;
-    private WebElementFacade clickOnAddToCartButton;
+
+    private WebElementFacade clickOnShopPage;
+    private WebElementFacade clickOnAddToCartProduct;
+    private WebElementFacade clickOnViewShoppingCart;
+    private Object WebElementFacade;
+
 
     @Step
-    public void setTypeInProductInSearchField(WebElementFacade typeInProductInSearchField) {
-        this.typeInProductInSearchField = typeInProductInSearchField;
+    public void setClickOnShopPage(WebElementFacade clickOnShopPage) {
+        this.clickOnShopPage = clickOnShopPage;
+        cartPage.setClickOnShopPage(WebElementFacade,clickOnShopPage);
     }
     @Step
-    public void setClickOnSearchProduct(WebElementFacade clickOnSearchProduct) {
-        this.clickOnSearchProduct = clickOnSearchProduct;
+    public void setClickOnAddToCartProduct(WebElementFacade clickOnAddToCartProduct) {
+        this.clickOnAddToCartProduct = clickOnAddToCartProduct;
     }
+
     @Step
-    public void setClickOnProduct(WebElementFacade clickOnProduct) {
-        this.clickOnProduct = clickOnProduct;
-    }
-    @Step
-    public void setClickOnCheckItemToDownload(WebElementFacade clickOnCheckItemToDownload) {
-        this.clickOnCheckItemToDownload = clickOnCheckItemToDownload;
-    }
-    @Step
-    public void setClickOnAddToCartButton(WebElementFacade clickOnAddToCartButton) {
-        this.clickOnAddToCartButton = clickOnAddToCartButton;
+    public void setClickOnViewShoppingCart(WebElementFacade clickOnAddToCartButton) {
+        this.clickOnViewShoppingCart = clickOnViewShoppingCart;
     }
 
 

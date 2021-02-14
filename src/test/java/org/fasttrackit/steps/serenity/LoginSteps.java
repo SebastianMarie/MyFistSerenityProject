@@ -13,8 +13,7 @@ public class LoginSteps{
     @Step
     public void navigateToLogin(){
         homePage.open();
-        homePage.clickAccountLink();
-        homePage.clickLoginLink();
+        homePage.clickSignInOrRegisterLink();
     }
     @Step
     public void setEmail(String email){
@@ -23,14 +22,17 @@ public class LoginSteps{
     }
     @Step
     public void setPassword(String password){
-    loginPage.setPasswordField(password);
+
+        loginPage.setPasswordField(password);
     }
     @Step
     public void clickLoginButton(){
+
         loginPage.clickLoginButton();
     }
     @Step
     public void login(String username, String password ){
+        loginPage.open();
     setEmail(username);
     setPassword(password);
     clickLoginButton();
@@ -40,4 +42,6 @@ public class LoginSteps{
         accountPage.verifyHelloMessage(username);
 
     }
+
+
 }

@@ -1,5 +1,6 @@
 package org.fasttrackit.features.search;
 
+import net.serenitybdd.core.annotations.findby.FindBy;
 import net.thucydides.core.annotations.Steps;
 import org.fasttrackit.steps.serenity.LoginSteps;
 import org.fasttrackit.steps.serenity.SearchSteps;
@@ -20,11 +21,15 @@ public class SearchTest extends BaseTest {
     public void searchProductTest(){
 loginSteps.login(EnviromentConstants.USER_EMAIL,EnviromentConstants.USER_PASS);
 
-//searchSteps.setSearch("necklace");
-        searchSteps.setSearch("shirt");
-        searchSteps.clickSearch();
+//searchSteps.setSearch("aaa");
 
-//searchSteps.search("necklace");
-//searchSteps.verifyIfProductIsDisplayed("x");
+        searchSteps.clickSearchButton();
+        searchSteps.setSearchField("aaa");
+        searchSteps.clickSearchIcon();
+
+//searchSteps.search("aaa");
+
+
+        //searchSteps.verifyIfProductIsDisplayed();
     }
 }

@@ -3,33 +3,48 @@ package org.fasttrackit.steps.serenity;
 import net.thucydides.core.annotations.Step;
 import org.fasttrackit.pages.HomePage;
 import org.fasttrackit.pages.LoginPage;
-import org.fasttrackit.pages.SearchResultPage;
+import org.fasttrackit.pages.SearchPage;
 import org.junit.Assert;
 
 public class SearchSteps {
 
     private HomePage homePage;
     private LoginPage loginPage;
-    private SearchResultPage searchResultPage;
+    private SearchPage searchResultPage;
+    private Object searchField;
 
     @Step
-    public void setSearch(String value){
+    public void clickSearchButton(){
 
-        homePage.setSearchField(value);
+        homePage.clickSearchButton();
+    }
+
+    @Step
+    public void setSearchField(String value){
+
+        homePage.setSearchField(value, searchField);
     }
     @Step
-    public void clickSearch(){
-
+    public void clickSearchIcon(){
         homePage.clickSearchIcon();
     }
+
     @Step
     public void search(String value){
-        setSearch(value);
-       clickSearch();
+
+       clickSearchButton();
+        setSearchField(value);
+        clickSearchIcon();
+
    }
+
+
     @Step
     public void verifyIfProductIsDisplayed(String productName){
+
         Assert.assertTrue(searchResultPage.isProductDisplayed(productName));
     }
 
+    public void verifyIfProductIsDisplayed() {
+    }
 }

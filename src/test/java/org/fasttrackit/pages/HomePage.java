@@ -4,22 +4,34 @@ import net.serenitybdd.core.annotations.findby.FindBy;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.openqa.selenium.WebElement;
 
-@DefaultUrl("http://testfasttrackit.info/selenium-test/")
+@DefaultUrl("http://qa3.fasttrackit.org:8008/")
 public class HomePage extends PageObject {
-    @FindBy(css = ".skip-account .label")
-    private WebElementFacade accountLink;
-    @FindBy(css = "a[title*='Log']")
-    private WebElementFacade loginLink;
-    @FindBy(css = "#search")
+    @FindBy(css = "[title='Login']")
+    private WebElementFacade SignInOrRegister;
+    @FindBy(css = "fa-search search-btn")
+    private WebElementFacade searchButton;
+    @FindBy(css = ".site-top-bar .search-field ")
     private WebElementFacade searchField;
-    @FindBy(css = ".search-button")
+    @FindBy(css = ".site-top-bar .search-submit")
     private WebElementFacade searchIcon;
 
-    public void clickAccountLink(){ clickOn(accountLink); }
-    public void clickLoginLink(){ clickOn(loginLink); }
-    public void setSearchField(String text){typeInto(searchField,text);}
-    public void clickSearchIcon(){clickOn(searchIcon);}
 
+
+
+    public void clickSignInOrRegisterLink(){
+        clickOn(SignInOrRegister); }
+
+    public void clickSearchButton() {
+        clickOn(searchButton);
+    }
+
+    public void setSearchField(String value, Object searchField) {
+        typeInto((WebElement) searchField, new String(value));
+    }
+
+    public void clickSearchIcon(){
+        clickOn(searchIcon);}
 
 }

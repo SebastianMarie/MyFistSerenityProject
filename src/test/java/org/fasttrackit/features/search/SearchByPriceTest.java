@@ -6,6 +6,7 @@ import org.fasttrackit.steps.serenity.SearchSteps;
 import org.fasttrackit.utils.BaseTest;
 import org.junit.Test;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 
@@ -21,6 +22,7 @@ public class SearchByPriceTest extends BaseTest {
     public static void main(String[] args) {
 
         int [] array = new int [] {190, 125, 160, 140};
+
 
         Arrays.sort(array);
         System.out.println("Elements of array sorted in ascending order: ");

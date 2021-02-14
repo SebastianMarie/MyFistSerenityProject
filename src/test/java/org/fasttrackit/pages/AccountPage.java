@@ -6,11 +6,11 @@ import net.serenitybdd.core.pages.WebElementFacade;
 
 public class AccountPage extends PageObject {
 
-    @FindBy(css = ".hello strong")
+    @FindBy(css = "strong:first-child")
     private WebElementFacade helloMsg;
 
     public void verifyHelloMessage(String username){
-        helloMsg.shouldContainText("Hello, "+username+"!");
+        helloMsg.shouldContainText("Hello "+"username");
 
     }
 

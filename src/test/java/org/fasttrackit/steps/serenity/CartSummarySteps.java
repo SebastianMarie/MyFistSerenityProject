@@ -4,7 +4,7 @@ import net.thucydides.core.annotations.Step;
 import org.fasttrackit.pages.AccountPage;
 import org.fasttrackit.pages.HomePage;
 import org.fasttrackit.pages.LoginPage;
-import org.fasttrackit.pages.SearchResultPage;
+import org.fasttrackit.pages.SearchPage;
 import org.openqa.selenium.By;
 
 public class CartSummarySteps {
@@ -12,7 +12,7 @@ public class CartSummarySteps {
     private HomePage homePage;
     private LoginPage loginPage;
     private AccountPage accountPage;
-    private SearchResultPage searchResultPage;
+    private SearchPage searchResultPage;
 
     @Step
     public void cartSummary() {
