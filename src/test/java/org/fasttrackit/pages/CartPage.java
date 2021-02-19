@@ -10,18 +10,40 @@ import org.openqa.selenium.WebElement;
 
 public class CartPage extends PageObject {
 
-    @FindBy(css = " #menu-item-1728 a")
+
+
+    @FindBy(css = "nav header h1")
     private WebElementFacade clickOnShopPage;
     @FindBy(css="/shop?add-to-cart=2880")
     private WebElementFacade clickAddToCartProduct;
+    @FindBy(css="/shop?add-to-cart=3350")
+    private WebElementFacade clickAddToCartProduct2;
+    @FindBy(css="/shop?add-to-cart=2627")
+    private WebElementFacade clickAddToCartProduct3;
+    @FindBy(css = "fa fa-shopping-cart")
+    private WebElementFacade clickViewShoppingCart;
 
-    public void setClickOnShopPage(Object webElementFacade, WebElementFacade clickOnShopPage) {
+
+    public void clickOnShopPage() {
+        clickOn(clickOnShopPage);
+    }
+    public void clickAddToCartProduct() {
+        clickOn(clickAddToCartProduct);
+    }
+    public void clickAddToCartProduct2() {
+        clickOn(clickAddToCartProduct2);
+    }
+    public void clickAddToCartProduct3() {
+        clickOn(clickAddToCartProduct3);
+    }
+    public void clickViewShoppingCart() {
+        clickOn(clickViewShoppingCart);
+
     }
 
     @DefaultUrl("http://qa3.fasttrackit.org:8008/cart")
   public class ViewCartPage extends PageObject{
-        @FindBy(css = "fa fa-shopping-cart")
-        private WebElementFacade clickViewShoppingCart;
+
         
         public void setClickOnShopPage(WebElement shopPage){
             clickOn(shopPage);

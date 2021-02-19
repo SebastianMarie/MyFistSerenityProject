@@ -5,7 +5,9 @@ import org.fasttrackit.pages.AccountPage;
 import org.fasttrackit.pages.HomePage;
 import org.fasttrackit.pages.LoginPage;
 
-public class LoginSteps{
+import java.util.Objects;
+
+public class LoginSteps {
     private HomePage homePage;
     private LoginPage loginPage;
     private AccountPage accountPage;
@@ -38,10 +40,11 @@ public class LoginSteps{
     clickLoginButton();
     }
     @Step
-    public void verifyAccountMessage(String username){
+    public void verifyHelloMessage(String username){
         accountPage.verifyHelloMessage(username);
 
     }
+
 
 
 }

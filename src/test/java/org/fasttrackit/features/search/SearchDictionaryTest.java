@@ -10,16 +10,16 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 
-import org.fasttrackit.steps.serenity.EndUserSteps;
+import org.fasttrackit.steps.serenity.DictionarySteps;
 
 @RunWith(SerenityRunner.class)
-public class SearchByKeywordStory {
+public class SearchDictionaryTest {
 
     @Managed(uniqueSession = true)
     public WebDriver webdriver;
 
     @Steps
-    public EndUserSteps anna;
+    public DictionarySteps anna;
 
     @Issue("#WIKI-1")
     @Test

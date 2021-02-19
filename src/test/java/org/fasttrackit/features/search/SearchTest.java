@@ -1,7 +1,8 @@
 package org.fasttrackit.features.search;
 
-import net.serenitybdd.core.annotations.findby.FindBy;
+import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Steps;
+import org.fasttrackit.steps.serenity.CartSteps;
 import org.fasttrackit.steps.serenity.LoginSteps;
 import org.fasttrackit.steps.serenity.SearchSteps;
 import org.fasttrackit.utils.BaseTest;
@@ -15,21 +16,25 @@ public class SearchTest extends BaseTest {
 
     @Steps
     private SearchSteps searchSteps;
+    @Steps
+    private CartSteps cartSteps;
 
 
     @Test
-    public void searchProductTest(){
-loginSteps.login(EnviromentConstants.USER_EMAIL,EnviromentConstants.USER_PASS);
+    public void searchProductTest() {
+        //loginSteps.login(EnviromentConstants.USER_EMAIL, EnviromentConstants.USER_PASS);
 
-//searchSteps.setSearch("aaa");
 
+        loginSteps.navigateToLogin();
         searchSteps.clickSearchButton();
         searchSteps.setSearchField("aaa");
         searchSteps.clickSearchIcon();
 
-//searchSteps.search("aaa");
+
+     //Or you can replace the 3 searchSteps methods from above, with the single method fom bellow
+     //searchSteps.search("aaa");
 
 
-        //searchSteps.verifyIfProductIsDisplayed();
+       //searchSteps.verifyIfProductIsDisplayed("aaa");
     }
 }

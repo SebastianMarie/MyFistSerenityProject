@@ -10,8 +10,7 @@ public class SearchSteps {
 
     private HomePage homePage;
     private LoginPage loginPage;
-    private SearchPage searchResultPage;
-    private Object searchField;
+    private SearchPage searchPage;
 
     @Step
     public void clickSearchButton(){
@@ -22,7 +21,7 @@ public class SearchSteps {
     @Step
     public void setSearchField(String value){
 
-        homePage.setSearchField(value, searchField);
+        homePage.setSearchField(value);
     }
     @Step
     public void clickSearchIcon(){
@@ -42,9 +41,9 @@ public class SearchSteps {
     @Step
     public void verifyIfProductIsDisplayed(String productName){
 
-        Assert.assertTrue(searchResultPage.isProductDisplayed(productName));
+        Assert.assertTrue(searchPage.isProductDisplayed(productName));
     }
 
-    public void verifyIfProductIsDisplayed() {
-    }
+
+
 }

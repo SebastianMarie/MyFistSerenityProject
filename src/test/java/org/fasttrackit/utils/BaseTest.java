@@ -10,8 +10,9 @@ import org.openqa.selenium.WebDriver;
 public class BaseTest {
     @Managed(uniqueSession = false)
     private WebDriver webDriver;
+
     @Before
-    public void setup(){
+    public void setup() {
         webDriver.manage().window().maximize();
     }
 }

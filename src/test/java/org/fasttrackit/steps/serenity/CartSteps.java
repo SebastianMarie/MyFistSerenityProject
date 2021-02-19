@@ -15,25 +15,31 @@ public class CartSteps<ShopPage> {
     private CartPage cartPage;
 
     private WebElementFacade clickOnShopPage;
-    private WebElementFacade clickOnAddToCartProduct;
-    private WebElementFacade clickOnViewShoppingCart;
+    private WebElementFacade clickAddToCartProduct;
+    private WebElementFacade clickViewShoppingCart;
     private Object WebElementFacade;
 
 
     @Step
-    public void setClickOnShopPage(WebElementFacade clickOnShopPage) {
-        this.clickOnShopPage = clickOnShopPage;
-        cartPage.setClickOnShopPage(WebElementFacade,clickOnShopPage);
+    public void clickOnShopPage() {
+
+        cartPage.clickOnShopPage();
     }
     @Step
-    public void setClickOnAddToCartProduct(WebElementFacade clickOnAddToCartProduct) {
-        this.clickOnAddToCartProduct = clickOnAddToCartProduct;
+    public void clickAddToCartProduct() {
+        cartPage.clickAddToCartProduct();
     }
-
     @Step
-    public void setClickOnViewShoppingCart(WebElementFacade clickOnAddToCartButton) {
-        this.clickOnViewShoppingCart = clickOnViewShoppingCart;
+    public void clickAddToCartProduct2() {
+        cartPage.clickAddToCartProduct2();
     }
-
+    @Step
+    public void clickAddToCartProduct3() {
+        cartPage.clickAddToCartProduct3();
+    }
+    @Step
+    public void clickViewShoppingCart() {
+        cartPage.clickOn(clickViewShoppingCart);;
+    }
 
 }

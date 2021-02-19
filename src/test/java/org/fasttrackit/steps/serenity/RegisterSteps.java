@@ -33,14 +33,7 @@ public class RegisterSteps {
     public void clickRegisterButton(){
         registerPage.clickRegisterButton();
     }
-    @Step
-    public void register(String username,String password){
-        registerPage.open();
-        setRegisterEmail(username);
-        setRegisterPassword(password);
-        clickRegisterButton();
-        
-    }
+
     @Step
     public void verifyRegisterMessage(String userName) {
         

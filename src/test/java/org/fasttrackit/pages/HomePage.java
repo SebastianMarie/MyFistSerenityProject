@@ -10,9 +10,9 @@ import org.openqa.selenium.WebElement;
 public class HomePage extends PageObject {
     @FindBy(css = "[title='Login']")
     private WebElementFacade SignInOrRegister;
-    @FindBy(css = "fa-search search-btn")
+    @FindBy(css = ".fa-search.search-btn")
     private WebElementFacade searchButton;
-    @FindBy(css = ".site-top-bar .search-field ")
+    @FindBy(css = ".site-top-bar .search-field")
     private WebElementFacade searchField;
     @FindBy(css = ".site-top-bar .search-submit")
     private WebElementFacade searchIcon;
@@ -27,8 +27,9 @@ public class HomePage extends PageObject {
         clickOn(searchButton);
     }
 
-    public void setSearchField(String value, Object searchField) {
-        typeInto((WebElement) searchField, new String(value));
+    public void setSearchField(String value) {
+        waitFor(searchField);
+        typeInto(searchField, value);
     }
 
     public void clickSearchIcon(){

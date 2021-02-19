@@ -1,6 +1,7 @@
 package org.fasttrackit.features.search;
 
 import net.thucydides.core.annotations.Steps;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.fasttrackit.steps.serenity.LoginSteps;
 import org.fasttrackit.steps.serenity.RegisterSteps;
 import org.fasttrackit.utils.BaseTest;
@@ -15,7 +16,7 @@ public class RegisterTest extends BaseTest {
 
     @Test
     public void validCredentialsRegisterTest(){
-
+//String randomEmail = RandomStringUtils.randomAlphanumeric(10) + "@email.com";
         registerSteps.navigateToRegister();
         registerSteps.setRegisterEmail(EnviromentConstants.USER_EMAIL);
         registerSteps.setRegisterPassword(EnviromentConstants.USER_PASS);
@@ -23,7 +24,6 @@ public class RegisterTest extends BaseTest {
      //   registerSteps.verifyAccountMessage(EnviromentConstants.USER_NAME);
 
 //Or you can write the method that contain all 4 methods from above, for Register Test
-        registerSteps.register(EnviromentConstants.USER_EMAIL,EnviromentConstants.USER_PASS);
 
     }
 }
